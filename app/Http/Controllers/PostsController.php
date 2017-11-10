@@ -14,9 +14,10 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
-        $posts = Post::all();
-        return view('list', [ "posts" => $posts ]);
+    $posts = Post::all();
+    return view('blog.index', [ "posts" => $posts ]);
+        //return "test";
+        //return view('blog.index', compact('posts'));
     }
 
     /**
@@ -27,6 +28,7 @@ class PostsController extends Controller
     public function create()
     {
         //
+        return view('blog.update');
     }
 
     /**
@@ -48,9 +50,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        //
-        $post = Post::find($id);
-        return view('posts.details')->with('post', $post);
+        return view('blog.show', compact('post'));
     }
 
     /**
@@ -85,5 +85,7 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
         //
+        //$post = Post::find($id);
+        //return view('blog.delete', ["post" => $post]);
     }
 }

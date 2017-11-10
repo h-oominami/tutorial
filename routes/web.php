@@ -10,4 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/', 'PostsController');
+//Route::resource('/', 'PostsController');
+Route::get('/', 'PostsController@index');       //一覧表示画面
+Route::get('/blog', 'PostsController@show');    //詳細表示画面
+Route::get('blog/create', 'PostsController@create');  //新規作成画面
+
+?>

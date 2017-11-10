@@ -2,8 +2,10 @@
 <!--
  list.php
  概要：記事一覧画面
+ @extends('layouts.app')
 -->
-@extends('layouts.app')
+
+
 <!DOCTYPE html>
 <html>
     <!--
@@ -22,10 +24,12 @@
                 <table border="1" cellspacing="0" cellpadding="1">
                 @foreach ($posts as $post)
                 <tr>
-                    <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
 	                <td>{{$post->content}}</td>
                 </tr>
                 @endforeach
+                <a href="{{ action('PostsController@show', $post->title, [$post->id]) }}">記事詳細画面へ</a>
+                <a href="{{ action('PostsController@create') }}">記事作成画面へ</a>           
+         </body>
     </table>
 </html>
