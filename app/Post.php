@@ -12,4 +12,8 @@ class Post extends Model
      * @var string
      */
     protected $table = 'posts';
+    protected $fillable = [
+        'title',
+        'content',
+    ];
 }
